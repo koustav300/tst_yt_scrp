@@ -142,19 +142,27 @@ def upload_VDO_ToS3():
     import boto3
     from botocore.exceptions import NoCredentialsError
     import json
+    import os
 
-    aws_cred =json.loads( udf.getting_aws_credentials())
-    ACCESS_KEY = aws_cred['ACCESS_KEY']
-    SECRET_KEY = aws_cred['SECRET_KEY']
+    os.environ['AWS_PROFILE'] = "Profile1"
+    os.environ['AWS_DEFAULT_REGION'] = "us-west-2"
+    s3 = boto3.client('s3', region_name='us-west-2')
+    # Retrieves all regions/endpoints that work with S3
+    response = s3.list_buckets()
+
+
+    # aws_cred =json.loads( udf.getting_aws_credentials())
+    # ACCESS_KEY = aws_cred['ACCESS_KEY']
+    # SECRET_KEY = aws_cred['SECRET_KEY']
 
     bucket_name = 'yt-vdo-uploaded'
     local_file = 'C:/Users/koust/Documents/vdo1.3gpp'
     s3_file_name = 'ProdLoad.3gpp'
 
     def upload_to_aws(local_file, bucket, s3_file):
-        s3 = boto3.client('s3', aws_access_key_id=ACCESS_KEY,
-                          aws_secret_access_key=SECRET_KEY)
-        print('S3',s3)
+        # s3 = boto3.client('s3', aws_access_key_id=ACCESS_KEY,
+        #                   aws_secret_access_key=SECRET_KEY)
+        # print('S3',s3)
         try:
             s3.upload_file(local_file, bucket, s3_file)
             print("Upload Successful")

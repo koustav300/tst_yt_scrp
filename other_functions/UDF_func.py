@@ -346,5 +346,3 @@ def getting_aws_credentials():
             pass
 
     return secret
-
-getting_aws_credentials()
