@@ -256,12 +256,14 @@ def fetch_scrapped_info_frmMysql(input_channel_name):
 
 
 def fetch_scrapped_info_frmMongoDb(input_channel_name):
+    import time
     from other_functions import UDF_connections as new_conn
     # connecting to mongoDb
     try:
         client = new_conn.create_mongodb_conn()
-    except:
-        print("ERROR: Fail to connect to mongoDb")
+        time.sleep(5.5)
+    except Exception as e:
+        print("ERROR: Fail to connect to mongoDb    " + e)
 
     db = client['mongotest']
     collection = db['testLoadtest5']

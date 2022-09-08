@@ -106,6 +106,7 @@ def fetchDataFromDb():
 
     print('S2')
     basicInfo_table_text = udf.fetch_scrapped_info_frmMysql(chnnl_name)
+    print(basicInfo_table_text)
     print('S3')
     comment_table_text = udf.fetch_scrapped_info_frmMongoDb(chnnl_name)
     print('S4')
