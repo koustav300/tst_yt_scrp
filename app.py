@@ -124,7 +124,6 @@ def download_vdos():
 
     #fetching all videos
     all_video = channel_url.videos
-    print(all_video)
     # no of videos  user wants fetch the data of
     vdo_limit = int(request.args.get('target_nunOf_vdos'))
     target_vdo_len = int(request.args.get('target_length'))
@@ -136,6 +135,7 @@ def download_vdos():
         if counter > 1:
             break  # if the limit is reached
 
+    print('download done sucessfully')
     return 'Download successful'
 
 @app.route('/upload_vdo_toS3', methods=['GET'])
