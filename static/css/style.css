@@ -1,0 +1,53 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    max-width: 100vw;
+    overflow: hidden;
+}
+.displayNone{
+    display: none !important;
+}
+#main_container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 18vw 82vw;
+}
+    #left_main_container{
+        background-color: whitesmoke;
+    }
+    #right_main_container{
+        width: 85vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 30vh 70vh;
+    }
+        #right_top_container{
+            background-color: whitesmoke;
+        }
+            #input_link{
+                width: 40vw;
+            }
+            #link_example_container{
+                margin-bottom: 1.5vh;
+                margin-top: 0.5vh;
+            }
+            #chnnl_link_container div{
+                margin-top: 0.5vh;
+            }
+
+            #finter_main_container{
+                margin: 2vh 0% 3vh 0%;
+                display: grid;
+                grid-template-columns: 30% 70%;
+            }
+
+            button{
+                margin-left: 0.5vw;
+            }
+        #right_bottom_container{
+            height: 85vh;
+            width: 100%;
+            max-width:100%;
+            background-color: whitesmoke;
+        }
