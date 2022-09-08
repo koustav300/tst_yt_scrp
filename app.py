@@ -142,11 +142,9 @@ def download_vdos():
 def upload_VDO_ToS3():
     import boto3
     from botocore.exceptions import NoCredentialsError
-    import json
-    import os
 
-    os.environ['AWS_PROFILE'] = "Profile1"
-    os.environ['AWS_DEFAULT_REGION'] = "us-west-2"
+    # os.environ['AWS_PROFILE'] = "Profile1"
+    # os.environ['AWS_DEFAULT_REGION'] = "us-west-2"
     s3 = boto3.client('s3', region_name='us-west-2')
     # Retrieves all regions/endpoints that work with S3
     response = s3.list_buckets()
