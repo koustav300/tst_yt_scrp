@@ -263,7 +263,8 @@ def fetch_scrapped_info_frmMongoDb(input_channel_name):
         client = new_conn.create_mongodb_conn()
         time.sleep(5.5)
     except Exception as e:
-        print("ERROR: Fail to connect to mongoDb    " + e)
+        print("ERROR: Fail to connect to mongoDb")
+        print(e)
 
     db = client['mongotest']
     collection = db['testLoadtest5']
