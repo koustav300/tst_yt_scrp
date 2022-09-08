@@ -294,7 +294,7 @@ def fetch_scrapped_info_frmMongoDb(input_channel_name):
 
 def getting_aws_credentials():
     import boto3
-    import base64
+    # import base64
     from botocore.exceptions import NoCredentialsError
     from botocore.exceptions import ClientError
 
@@ -342,8 +342,8 @@ def getting_aws_credentials():
             secret = get_secret_value_response['SecretString']
             #print(secret)
         else:
-            decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
-
+            # decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
+            pass
 
     return secret
 
