@@ -226,7 +226,7 @@ def yt_video_len_in_sec(input_api_len):
     return len_in_sec
 
 def fetch_scrapped_info_frmMysql(input_channel_name):
-    import UDF_connections as udf_con
+    from other_functions import UDF_connections as udf_con
 
     # creating pySQL conncetion
     conn = udf_con.create_pysql_connction()
@@ -256,7 +256,7 @@ def fetch_scrapped_info_frmMysql(input_channel_name):
 
 
 def fetch_scrapped_info_frmMongoDb(input_channel_name):
-    import UDF_connections as new_conn
+    from other_functions import UDF_connections as new_conn
     # connecting to mongoDb
     try:
         client = new_conn.create_mongodb_conn()
